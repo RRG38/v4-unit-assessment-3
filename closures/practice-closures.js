@@ -10,10 +10,21 @@
   
   //CODE HERE
 
-  
+  function myFunc() {
+    let myStr = 'super secret string';
+
+    function getSecretString() {
+      return myStr;
+    }
+
+    return getSecretString;
+  };
+
   //Now create a variable called secretString. Its value should be the invocation of myFunc.
 
   //CODE HERE
+
+  const secretString = myFunc()
   
   
   ////////////PROBLEM 2////////////
@@ -30,25 +41,44 @@
   
   //CODE HERE
 
+  function lightSwitch() {
+    let isTheLightOn = false
+
+    function flipTheSwitch() {
+      isTheLightOn = true
+      return 'The light is on'
+    }
+    return flipTheSwitch
+  }
+
   
   //Create a variable called kitchenSwitch whose value is the invocation of lightSwitch.
   
   //CODE HERE
 
+  const kitchenSwitch = lightSwitch()
+
   
   //Invoke kitchenSwitch.
 
   //CODE HERE
+
+  kitchenSwitch()
   
   
   //Create a variable called bathroomSwitch whose value is the invocation of lightSwitch. 
 
   //CODE HERE
+
+  const bathroomSwitch = lightSwitch()
   
   
   //Invoke bathroomSwitch twice.
   
   //CODE HERE
+
+  bathroomSwitch()
+  bathroomSwitch()
 
   
   
@@ -65,6 +95,23 @@
 
   //CODE HERE
 
+  function plantTracker() {
+    let plant = 'fern'
+    let height = 12
+
+    return {
+      readInfo: function(){
+        return `This is a ${plant} plant that is ${height} inches tall.`
+      },
+      waterPlant: function(){
+        return height += 1
+      },
+      prunePlant: function(){
+        return height -= 1
+      }
+    }
+  }
+
 
   ////////////PROBLEM 4////////////
 
@@ -80,6 +127,22 @@
 
   //CODE HERE
 
+  function inventory() {
+    let products = []
+
+    return {
+      readProducts: function(){
+        return products
+      },
+      addToProducts: function(prod){
+        return products + prod
+      },
+      deleteFromProducts: function(prod){
+        return products - prod
+      }
+    }
+  }
+
 
   /*
     Create a variable called 'shoes' whose value is the invocation of inventory.
@@ -87,10 +150,14 @@
 
   //CODE HERE
 
+  const shoes = inventory()
+
 
   /*
     Add an item to your shoes array using the addToProducts function
   */
 
   //CODE HERE
+
+  shoes.addToProducts('test')
 
